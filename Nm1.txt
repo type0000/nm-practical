@@ -1,0 +1,11 @@
+import scipy
+from scipy.optimize import bisect
+
+def f(x):
+    return x**2 - x - 2
+
+a, b = 1, 3
+
+root = bisect(f, a, b)
+
+print(f"Approximate root: {root:.6f}")

@@ -1,0 +1,14 @@
+import scipy
+from scipy.optimize import newton
+
+def f(x):
+    return x**3 - 2*x - 5
+
+def df(x):
+    return 3*x**2 - 2
+
+initial_guess = 2
+
+root = newton(f, initial_guess, fprime=df)
+
+print(f"Approximate root (Newton-Raphson method): {root:.6f}")

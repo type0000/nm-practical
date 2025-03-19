@@ -1,0 +1,13 @@
+import numpy as np
+from scipy.linalg import lu, lu_factor, lu_solve
+
+A = np.array([[2, 5], 
+              [1, 2]], dtype=float)
+
+B = np.array([21, 8], dtype=float)
+
+LU, piv = lu_factor(A)
+
+X = lu_solve((LU, piv), B)
+
+print("Solution (x, y):", X)

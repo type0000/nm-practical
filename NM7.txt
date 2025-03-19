@@ -1,0 +1,20 @@
+import numpy as np
+
+def f(x, y):
+    return y + x
+
+def euler_method(f, x0, y0, h, x_end):
+    x = x0
+    y = y0
+    while x < x_end:
+        y = y + h * f(x, y)
+        x += h
+    return y
+
+x0 = 0
+y0 = 2
+h = 0.05
+x_end = 2
+
+y_2 = euler_method(f, x0, y0, h, x_end)
+print(f"Approximate solution at x = {x_end} is y({x_end}) ≈ {y_2}")

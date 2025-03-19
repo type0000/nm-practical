@@ -1,0 +1,11 @@
+import scipy
+from scipy.optimize import brentq
+
+def f(x):
+    return x**3 - x - 1
+
+a, b = 1, 2
+
+root = brentq(f, a, b)
+
+print(f"Approximate root (Brent’s method): {root:.6f}")
